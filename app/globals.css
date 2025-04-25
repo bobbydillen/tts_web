@@ -1,0 +1,480 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 250 30% 10%;
+    --foreground: 45 38% 90%;
+    --card: 250 30% 13%;
+    --card-foreground: 45 38% 90%;
+    --popover: 250 30% 13%;
+    --popover-foreground: 45 38% 90%;
+    --primary: 45 80% 52%;
+    --primary-foreground: 250 30% 10%;
+    --secondary: 250 30% 20%;
+    --secondary-foreground: 45 38% 90%;
+    --muted: 250 30% 15%;
+    --muted-foreground: 45 38% 70%;
+    --accent: 330 50% 25%;
+    --accent-foreground: 45 38% 90%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 38% 90%;
+    --border: 250 30% 20%;
+    --input: 250 30% 20%;
+    --ring: 45 80% 52%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-playfair;
+  }
+  p,
+  span,
+  a,
+  button,
+  li {
+    @apply font-poppins;
+  }
+}
+
+/* 3D Styles */
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.rotate-y-45 {
+  transform: rotateY(45deg);
+}
+
+.rotate-x-45 {
+  transform: rotateX(45deg);
+}
+
+.rotate-y-30 {
+  transform: rotateY(30deg);
+}
+
+.rotate-x-30 {
+  transform: rotateX(30deg);
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.transform-3d-hover {
+  transition: transform 0.5s ease;
+}
+
+.transform-3d-hover:hover {
+  transform: translateZ(20px) rotateX(10deg) rotateY(10deg);
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.5), 0 0 10px rgba(212, 175, 55, 0.5);
+  }
+  to {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8), 0 0 20px rgba(212, 175, 55, 0.8);
+  }
+}
+
+/* Royal decorative elements */
+.royal-divider {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.royal-divider::before,
+.royal-divider::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #d4af37;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.royal-divider::before {
+  left: calc(50% - 50px);
+}
+
+.royal-divider::after {
+  right: calc(50% - 50px);
+}
+
+.royal-corner {
+  position: relative;
+}
+
+.royal-corner::before,
+.royal-corner::after,
+.royal-corner > span::before,
+.royal-corner > span::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-color: #d4af37;
+  z-index: 1;
+}
+
+.royal-corner::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.royal-corner::after {
+  top: 0;
+  right: 0;
+  border-top: 2px solid;
+  border-right: 2px solid;
+}
+
+.royal-corner > span::before {
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+}
+
+.royal-corner > span::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+
+/* Animation classes */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Image effects */
+.image-hover-zoom {
+  overflow: hidden;
+}
+
+.image-hover-zoom img {
+  transition: transform 0.7s ease;
+}
+
+.image-hover-zoom:hover img {
+  transform: scale(1.08);
+}
+
+.image-hover-royal {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-hover-royal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 0 solid rgba(212, 175, 55, 0.5);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.image-hover-royal:hover::before {
+  border-width: 10px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Parallax effect */
+.parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-position: center;
+  background-size: cover;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Text styles */
+.text-royal-gold {
+  color: #d4af37;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.text-royal-outline {
+  -webkit-text-stroke: 1px hsl(var(--primary));
+  color: transparent;
+}
+
+.text-shadow-royal {
+  text-shadow: 3px 3px 0px hsl(var(--accent));
+}
+
+.text-shadow-gold {
+  text-shadow: 0 0 10px hsl(var(--primary) / 0.5), 0 0 20px hsl(var(--primary) / 0.3);
+}
+
+/* Decorative elements */
+.royal-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.royal-gradient {
+  background: linear-gradient(135deg, #1a1a2e, #0f1e3d);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 50%, #b38728 100%);
+}
+
+/* Button styles */
+.btn-royal {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.btn-royal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.btn-royal:hover::before {
+  left: 100%;
+}
+
+/* Enhanced button styles */
+.btn-royal-enhanced {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+  border: 1px solid hsl(var(--primary));
+  background: linear-gradient(45deg, hsl(var(--primary) / 0.1), hsl(var(--primary) / 0.3));
+}
+
+.btn-royal-enhanced::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.btn-royal-enhanced:hover::before {
+  left: 100%;
+}
+
+.btn-royal-enhanced::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border: 1px solid hsl(var(--primary) / 0.5);
+  z-index: -2;
+}
+
+/* Day/Night toggle effect */
+.day-night-scene {
+  transition: all 1s ease;
+}
+
+.day-night-scene.night {
+  filter: brightness(0.7) saturate(1.2) hue-rotate(10deg);
+}
+
+.day-night-scene.day {
+  filter: brightness(1.1) saturate(1) hue-rotate(0deg);
+}
+
+/* Enhanced text styles */
+.text-royal-enhanced {
+  background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+  position: relative;
+  display: inline-block;
+}
+
+.text-royal-enhanced::before,
+.text-royal-enhanced::after {
+  content: "❧";
+  position: absolute;
+  color: hsl(var(--primary) / 0.5);
+  font-size: 0.8em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.text-royal-enhanced::before {
+  left: -1.5em;
+}
+
+.text-royal-enhanced::after {
+  right: -1.5em;
+}
+
+/* 3D Elements */
+.royal-3d-element {
+  position: relative;
+}
+
+.royal-3d-crown {
+  position: absolute;
+  width: 60px;
+  height: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D4AF37' stroke='%23D4AF37' stroke-width='0.5'%3E%3Cpath d='M12 2L7 7 2 5l3 9h14l3-9-5 2-5-5z'/%3E%3Cpath d='M5 14h14v4H5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+}
+
+.royal-3d-scepter {
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background: linear-gradient(to bottom, #d4af37, #fbf5b7, #d4af37);
+  transform: translateZ(10px);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.royal-3d-scepter::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #fbf5b7, #d4af37);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
+
+.royal-3d-orb {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #fcf6ba, #d4af37);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+.royal-3d-orb::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.royal-3d-orb::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+}
