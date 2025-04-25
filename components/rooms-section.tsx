@@ -38,9 +38,9 @@ const rooms = [
     title: "Royal Suite",
     description: "Regal experience with spacious living area and premium furnishings",
     images: [
-      "/bedroom1.jpg?height=400&width=600&text=Royal1",
-      "/bedroom2.jpg?height=400&width=600&text=Royal2",
-      "/bedroom3.jpg?height=400&width=600&text=Royal3",
+      "/bedroom2.jpg?height=400&width=600&text=Royal1",
+      "/bedroom3.jpg?height=400&width=600&text=Royal2",
+      "/bedroom1.jpg?height=400&width=600&text=Royal3",
     ],
     features: ["King Size Bed", "45 sq.m", "3 Guests", "Breakfast Included", "Free WiFi"],
     details:
@@ -63,9 +63,9 @@ const rooms = [
     title: "Imperial Suite",
     description: "Lavish interiors with separate living room and luxurious bathroom",
     images: [
-      "/bedroom1.jpg?height=400&width=600&text=Imperial1",
-      "/bedroom2.jpg?height=400&width=600&text=Imperial2",
-      "/bedroom3.jpg?height=400&width=600&text=Imperial3",
+      "/bedroom3.jpg?height=400&width=600&text=Imperial1",
+      "/bedroom1.jpg?height=400&width=600&text=Imperial2",
+      "/bedroom2.jpg?height=400&width=600&text=Imperial3",
     ],
     features: ["Queen Size Bed", "40 sq.m", "2 Guests", "Breakfast Included", "Free WiFi"],
     details:
@@ -88,8 +88,8 @@ const rooms = [
     title: "Executive Suite",
     description: "Perfect for business travelers with work desk and high-speed internet",
     images: [
-      "/bedroom1.jpg?height=400&width=600&text=Executive1",
-      "/bedroom2.jpg?height=400&width=600&text=Executive2",
+      "/bedroom2.jpg?height=400&width=600&text=Executive1",
+      "/bedroom1.jpg?height=400&width=600&text=Executive2",
       "/bedroom3.jpg?height=400&width=600&text=Executive3",
     ],
     features: ["Queen Size Bed", "35 sq.m", "2 Guests", "Breakfast Included", "Free WiFi"],
